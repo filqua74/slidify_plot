@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Macroeconomics in Europe ( App )</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Macroeconomics in Europe ( App )">
+  <meta name="author" content="Filqua74">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Macroeconomics in Europe ( App )</h1>
+    <h2>Project for Coursera Data Science Specialization</h2>
+    <p>Filqua74<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>Introduction</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Primary scope of the application is to apply what I learned in the Data Product course from Coursera. The application retrieve some data from Eurostat and provide an interactive interface to web users in order to produce comparison plot about some macroeconomic variables.</p>
+
+<p>Main characteristics are:</p>
+
+<ul>
+<li>Retrieve data from Eurostat using SDMX</li>
+<li>Provide user web interface for plot customization (through shiny)</li>
+<li>Provide comparison plot using ggplot2</li>
+</ul>
+
+<p>The application is available at <a href="https://filqua74.shinyapps.io/EcoPlot">shinyapps</a>.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Original data</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>The data used for the project is the Eurostat GDP table retrieved in SDMX. It can be downloaded from this <a href="http://ec.europa.eu/eurostat/estat-navtree-portlet-prod/BulkDownloadListing?file=data/naida_10_gdp.sdmx.zip">url</a>.</p>
+
+<p>After download, data have been converted as data frame and some columns type changed. The main characteristic of the final data frame are:</p>
+
+<pre><code>## &#39;data.frame&#39;:    148277 obs. of  8 variables:
+##  $ FREQ       : Factor w/ 1 level &quot;A&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ unit       : Factor w/ 6 levels &quot;CLV_I10&quot;,&quot;CLV_PCH_PRE&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ na_item    : Factor w/ 29 levels &quot;B11&quot;,&quot;B1G&quot;,&quot;B1GQ&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ geo        : Factor w/ 183 levels &quot;AU&quot;,&quot;BR&quot;,&quot;CA&quot;,..: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ TIME_FORMAT: Factor w/ 1 level &quot;P1Y&quot;: 1 1 1 1 1 1 1 1 1 1 ...
+##  $ TIME_PERIOD: chr  &quot;1975&quot; &quot;1976&quot; &quot;1977&quot; &quot;1978&quot; ...
+##  $ OBS_VALUE  : chr  &quot;-118.9&quot; &quot;-122.3&quot; &quot;-141.5&quot; &quot;-149.3&quot; ...
+##  $ OBS_STATUS : chr  NA NA NA NA ...
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Plot generation</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This is an example of plot ( related to GDP ) has been produced by the R code of the application. The same R code is part of the markdown of this slide.</p>
+
+<p><img src="assets/fig/unnamed-chunk-2-1.png" title="plot of chunk unnamed-chunk-2" alt="plot of chunk unnamed-chunk-2" style="display: block; margin: auto;" /></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Available options</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>It is possible to plot these variables:</p>
+
+<ul>
+<li>Gross domestic product at market prices</li>
+<li>External balance of goods and services</li>
+<li>Final consumption expenditure</li>
+</ul>
+
+<p>Time period spans 1975 to 2014. Data about several European countries are available like Germany, Spain, France and so on.</p>
+
+<p>This is an application for learning purpose of the author, please refer to the original data from Eurostat for professional usage.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='Introduction'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Original data'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Plot generation'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Available options'>
+         4
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
